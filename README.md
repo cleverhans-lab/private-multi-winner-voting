@@ -1,4 +1,4 @@
-# Private Multi-Winner Voting for Machine Learing
+# Private Multi-Winner Voting for Machine Learning
 
 ## Description of the code
 
