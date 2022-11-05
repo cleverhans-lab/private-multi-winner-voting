@@ -2,8 +2,8 @@
 
 ## Description of the code
 
-The `main.py` file contains the starting point. The parameters for the program
-are in `parameters.py` file.
+The `main.py` file contains the starting point for running different experiments. The parameters for the program
+are in `parameters.py` file. Several helper functions and utilities are contained in `utils.py`.
 
 ### Examples of the pipeline:
 
@@ -264,4 +264,9 @@ To activate the tau-clipping mechanism set the `--class_type`
 to `multilabel_tau_data_independent`. Then, `--private_tau_norm 2` (2 is for the
 L2 norm) and, e.g., for Pascal VOC the threshold tau is `1.8`. 
 
+## Organization of the Repository
 
+The `analysis` folder contains various files used for the implementation of various differential privacy primitives such as for computing the privacy cost. 
+The `architectures` folder contains different model architectures used in the experiments. 
+The `dpsgd` folder contains tests for DPSGD which were used to compare the performance of our method and DPSGD. 
+The `models` folder contains several helper functions and files for the ensemble based setup in our multi-label PATE implementation. 
