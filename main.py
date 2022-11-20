@@ -125,12 +125,11 @@ def train_private_models(args):
                               file)
 
         # Private model for initial training.
-        if args.dataset == "cxpert":
-            model = densenetpre()
-            print("Loaded densenet121")
-        else:
-            model = get_private_model_by_id(args=args, id=id)
-        # model = densenetpre()
+        # if args.dataset == "cxpert":
+        #     model = densenetpre()
+        #     print("Loaded densenet121")
+        #else:
+        model = get_private_model_by_id(args=args, id=id)
         if args.dataset == "pascal":
             model_state_dict = model.state_dict()
             pretrained_dict34 = torch.load(

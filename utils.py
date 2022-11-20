@@ -20,7 +20,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from ax.service.managed_loop import optimize  # pip install ax-platform
 from easydict import EasyDict as edict
-from numba import njit
 from sklearn import metrics
 from torch import Tensor
 from torch.nn import DataParallel
@@ -3720,7 +3719,6 @@ def non_cumulative(array: np.ndarray) -> np.ndarray:
     return result
 
 
-@njit
 def to_str(a: np.ndarray) -> str:
     return ",".join([str(x) for x in a])
 

@@ -1,0 +1,28 @@
+name: private-multi
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+
+dependencies:
+  - python=3.8.8
+  - matplotlib=3.3.4
+  - pandas=1.0.1
+  - seaborn=0.11.1
+  - pip=20.0
+  - pytorch::pytorch=1.8.1
+  - pytorch::torchvision=0.9.1
+  - nvidia::cudatoolkit=10.2
+  - numpy=1.19.2
+  - scipy=1.6.1
+  - pretrainedmodels=0.7.4
+  - conda-forge::ax-platform
+  - conda-forge::easydict
+  - pip:
+    - opencv-python
+    - imageio
+    - pydicom
+    - scikit-image
+    - requests
+    - tensorboardX

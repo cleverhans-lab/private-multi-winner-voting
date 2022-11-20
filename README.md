@@ -1,6 +1,15 @@
 # Private Multi-Winner Voting for Machine Learning
 
-## Description of the code
+### Installation Instructions:
+
+The `environment.yml` file contains the dependencies for this repository. To install these in a new environment, run 
+
+`conda env create -f environment.yml` followed by 
+
+`conda activate private-multi` to activate the environment. The code has been tested on a machine running Ubuntu 20.04 LTS with 4 NVIDIA GeForce RTX 2080 graphics cards. Conda version 4.12.0 was used to install the environment. 
+
+
+### Description of the code: 
 
 The `main.py` file contains the starting point for running different experiments. The parameters for the program
 are in `parameters.py` file. Several helper functions and utilities are contained in `utils.py`.
@@ -14,8 +23,9 @@ timestamp=$(date +%Y-%m-%d-%H-%M-%S-%N)
 DATASET='cxpert'
 architecture='densenet121_cxpert'
 num_models=50
-CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
---path /home/${USER}/code/capc-learning \
+CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py \
+--path ~/code/private-multi-winner-voting \
+--data_dir ~/data
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -59,7 +69,8 @@ DATASET='cxpert'
 architecture="densenet121_${DATASET}"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
---path /home/${USER}/code/capc-learning \
+--path ~/code/private-multi-winner-voting \
+--data_dir ~/data
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -108,7 +119,8 @@ DATASET='cxpert'
 architecture="densenet121_cxpert"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
---path /home/${USER}/code/capc-learning \
+--path ~/code/private-multi-winner-voting \
+--data_dir ~/data
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -157,7 +169,8 @@ DATASET='cxpert'
 architecture="densenet121_${DATASET}"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
---path /home/${USER}/code/capc-learning \
+--path ~/code/private-multi-winner-voting \
+--data_dir ~/data
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -206,7 +219,8 @@ DATASET='cxpert'
 architecture="densenet121_${DATASET}"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
---path /home/${USER}/code/capc-learning \
+--path ~/code/private-multi-winner-voting \
+--data_dir ~/data
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -247,7 +261,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
 echo train_private_${DATASET}_${timestamp}.txt
 ```
 
-## The main implementation parts and parameters
+### The main implementation parts and parameters
 
 The Binary PATE per label and Powerset can be found in
 file: `analysis/rdp_cumulative.py`. The functions are `analyze_multilabel()` for
@@ -264,7 +278,7 @@ To activate the tau-clipping mechanism set the `--class_type`
 to `multilabel_tau_data_independent`. Then, `--private_tau_norm 2` (2 is for the
 L2 norm) and, e.g., for Pascal VOC the threshold tau is `1.8`. 
 
-## Organization of the Repository
+### Organization of the Repository
 
 The `analysis` folder contains various files used for the implementation of various differential privacy primitives such as for computing the privacy cost. 
 The `architectures` folder contains different model architectures used in the experiments. 
