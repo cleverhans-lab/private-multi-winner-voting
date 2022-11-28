@@ -69,7 +69,7 @@ class DataLoader(data.Dataset):
 
 
 if __name__ == '__main__':
-    pascal_path = os.path.join('/home/nicolas/data', 'VOC2012/')
+    pascal_path = os.path.join(f"/home/{os.getenv('USER')}/data", 'VOC2012/')
     data = DataLoader(pascal_path, 'small_train_0')
     augmented_dataloader = torch.utils.data.DataLoader(data,
                                                        batch_size=32,

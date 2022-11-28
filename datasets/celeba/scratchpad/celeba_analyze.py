@@ -14,7 +14,7 @@ num_classes = 40
 
 """
 split:  all
-self.root:  /home/nicolas/code/capc-learning/celeba
+self.root: 
 self.base_folder:  celeba
 len all:  202599
 batch_index:  0
@@ -29,7 +29,7 @@ label:  tensor(
         [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
          1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1]])
 split:  train
-self.root:  /home/nicolas/code/capc-learning/celeba
+self.root:  /home/code/capc-learning/celeba
 self.base_folder:  celeba
 len train:  162770
 """

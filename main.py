@@ -2037,8 +2037,8 @@ def main(args):
             # Folders
             if args.use_pretrained_models:
                 args.private_model_path = os.path.join(
-                    "/home/nicolas/code/capc-learning",
-                    "private-models",
+                    args.path,
+                    "private-models", 
                     dataset + "pre",
                     architecture,
                     "{:d}-models".format(args.num_models),
@@ -2046,7 +2046,7 @@ def main(args):
                 )
             else:
                 args.private_model_path = os.path.join(
-                    "/home/nicolas/code/capc-learning",
+                    args.path,
                     "private-models",
                     dataset,
                     architecture,

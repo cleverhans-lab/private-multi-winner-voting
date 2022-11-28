@@ -29,9 +29,9 @@ def get_imagenet_dataset(args, train=True):
     else:
         # just using imagenet data
         pass
-    if os.path.exists("/home/nicolas/data/imagenet/"):
+    if os.path.exists(f"/home/{os.getenv('USER')}/data/imagenet/"):
         imagenet_dataset = datasets.ImageNet(
-            root="/home/nicolas/data/imagenet/",
+            root=f"/home/{os.getenv('USER')}/data/imagenet/",
             train=train,
             transform=transforms.Compose(preprocessing),
         )

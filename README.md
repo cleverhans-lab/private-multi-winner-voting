@@ -25,7 +25,7 @@ architecture='densenet121_cxpert'
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py \
 --path ~/code/private-multi-winner-voting \
---data_dir ~/data
+--data_dir ~/data \
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -70,7 +70,7 @@ architecture="densenet121_${DATASET}"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
 --path ~/code/private-multi-winner-voting \
---data_dir ~/data
+--data_dir ~/data \
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -120,7 +120,7 @@ architecture="densenet121_cxpert"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
 --path ~/code/private-multi-winner-voting \
---data_dir ~/data
+--data_dir ~/data \
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -170,7 +170,7 @@ architecture="densenet121_${DATASET}"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
 --path ~/code/private-multi-winner-voting \
---data_dir ~/data
+--data_dir ~/data \
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
@@ -220,7 +220,7 @@ architecture="densenet121_${DATASET}"
 num_models=50
 CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. nohup python main.py \
 --path ~/code/private-multi-winner-voting \
---data_dir ~/data
+--data_dir ~/data \
 --dataset ${DATASET} \
 --dataset_type 'balanced' \
 --balance_type 'standard' \
