@@ -18,6 +18,8 @@ are in `parameters.py` file. Several helper functions and utilities are containe
 
 1. Train private models (from scratch):
 
+Make sure to download the `CheXpert-v1.0-small` dataset to the `~/data` folder. The dataset can be found, for example, here: `https://www.kaggle.com/datasets/ashery/chexpert`.
+
 ```
 timestamp=$(date +%Y-%m-%d-%H-%M-%S-%N)
 DATASET='cxpert'
@@ -60,6 +62,21 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py \
 >> train_private_${DATASET}_${timestamp}.txt 2>&1 &
 echo train_private_${DATASET}_${timestamp}.txt
 ```
+
+The output location of the private models is determined by the `--path` argument as well as other settings as presented in the `main.py` code:
+
+```
+args.private_model_path = os.path.join(
+                    args.path,
+                    "private-models",
+                    dataset,
+                    architecture,
+                    "{:d}-models".format(args.num_models),
+                    xray_views,
+                )
+```
+
+The training of the private models is taking most of the time for the pipeline. For example, on 4 NVIDIA GeForce RTX 2080 GPUs, a single epoch takes around 15 sec. In the above examples, we train 50 models, each with 100 epochs. Thus, if the models are trained sequentially, then it takes less around 21 hours. However, the script can be run in parallel on many machines to decrease the total training time.
 
 2. Test private models:
 

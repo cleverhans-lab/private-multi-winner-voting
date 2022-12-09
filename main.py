@@ -17,14 +17,12 @@ from active_learning import compute_utility_scores_greedy
 from architectures.densenet_pre import densenetpre
 from architectures.resnet_pre import resnetpre
 from architectures.utils_architectures import pytorch2pickle
-
 # from datasets.chexpert.bin import train_chexpert
 from datasets.deprecated.chexpert.bin import train_chexpert
 from datasets.deprecated.chexpert.chexpert_utils import get_chexpert_dev_loader
 from datasets.utils import get_dataset_full_name
 from datasets.utils import set_dataset
 from datasets.utils import show_dataset_stats
-from datasets.xray.xray_datasets import get_votes_only_for_dataset
 from errors import check_perfect_balance_type
 from models.add_tau_per_model import set_taus
 from models.big_ensemble_model import BigEnsembleModel
@@ -41,10 +39,10 @@ from utils import from_result_to_str
 from utils import get_unlabeled_indices
 from utils import get_unlabeled_set
 from utils import metric
+from utils import pick_labels_general
 from utils import result
 from utils import train_model
 from utils import update_summary
-from utils import pick_labels_general
 from virtual_parties import query_ensemble_model_with_virtual_parties
 
 

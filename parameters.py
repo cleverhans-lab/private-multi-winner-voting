@@ -874,7 +874,7 @@ def get_parameters():
     parser.add_argument(
         "--path",
         type=str,
-        default=f"/home/{user}/code/capc-learning",
+        default=f"/home/{user}/code/private-multi-winner-voting",
         help="path to the project",
     )
     parser.add_argument(

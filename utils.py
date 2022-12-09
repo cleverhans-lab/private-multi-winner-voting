@@ -36,7 +36,6 @@ from datasets.celeba.celeba_utils import get_celeba_private_data
 from datasets.celeba.celeba_utils import get_celeba_test_set
 from datasets.celeba.celeba_utils import get_celeba_train_set
 from datasets.cifar.cifar_utils import get_cifar_private_data
-from datasets.cifar.tinyimage500k import get_extra_cifar10_data_from_ti
 from datasets.deprecated.chexpert.chexpert_utils import (
     get_chexpert_all_private_datasets,
 )
@@ -1942,8 +1941,6 @@ def get_attacker_dataset(args, dataset_name):
             ),
             download=True,
         )
-    elif dataset_name == "tinyimages":
-        dataset = get_extra_cifar10_data_from_ti()
     elif dataset_name.startswith("chexpert"):
         dataset = get_chexpert_test_set(args=args, mode="train")
     elif dataset_name == "retinopathy":
