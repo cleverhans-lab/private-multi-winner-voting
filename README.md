@@ -76,7 +76,7 @@ args.private_model_path = os.path.join(
                 )
 ```
 
-The training of the private models is taking most of the time for the pipeline. For example, on 4 NVIDIA GeForce RTX 2080 GPUs, a single epoch takes around 15 sec. In the above examples, we train 50 models, each with 100 epochs. Thus, if the models are trained sequentially, then it takes less around 21 hours. However, the script can be run in parallel on many machines to decrease the total training time.
+The training of the private models is taking most of the time for the pipeline and depends on the selected dataset as well as model architecture. For example, on 4 NVIDIA GeForce RTX 2080 GPUs, a single epoch takes around 15 sec for the CheXpert dataset trained on DenseNet121. In the above examples, we train 50 models, each with 100 epochs. Thus, if the models are trained sequentially, then it takes around 21 hours. However, the script can be run in parallel on many machines to decrease the total training time.
 
 2. Test private models:
 
